@@ -4,7 +4,7 @@ import io.micronaut.serde.annotation.Serdeable;
 
 import java.util.UUID;
 
-@Serdeable.Serializable
+@Serdeable
 public record PersonDto(
         UUID id,
         String firstName,

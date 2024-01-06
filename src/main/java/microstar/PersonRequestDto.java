@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 import java.io.Serializable;
 
-@Serdeable.Deserializable
+@Serdeable
 public record PersonRequestDto(
         @NotEmpty(message = "First Name can not be empty")
         String firstName,
