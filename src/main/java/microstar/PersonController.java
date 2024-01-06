@@ -11,8 +11,6 @@ import jakarta.validation.constraints.NotNull;
 import java.util.List;
 import java.util.UUID;
 
-import static io.micronaut.http.HttpResponse.ok;
-
 @Validated
 @Controller("/api/person")
 @Produces(MediaType.APPLICATION_JSON)
@@ -24,17 +22,17 @@ public class PersonController {
 
     @Get
     public HttpResponse<List<PersonDto>> findAll() {
-        return ok(personService.findAll());
+        return HttpResponse.ok(personService.findAll());
     }
 
     @Get("{id}")
     public HttpResponse<PersonDto> findById(@NotNull @PathVariable("id") UUID id) {
-        return ok(personService.findById(id));
+        return HttpResponse.ok(personService.findById(id));
     }
 
     @Post
     public HttpResponse<PersonDto> create(@Body @Valid PersonRequestDto requestDto) {
-        return ok(personService.create(requestDto));
+        return HttpResponse.created(personService.create(requestDto));
     }
 
     @Put("{id}")
@@ -42,7 +40,7 @@ public class PersonController {
             @PathVariable("id") UUID id,
             @Body @Valid PersonRequestDto requestDto
     ) {
-        return ok(personService.update(id, requestDto));
+        return HttpResponse.ok(personService.update(id, requestDto));
     }
 
     @Delete("{id}")
