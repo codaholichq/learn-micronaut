@@ -1,0 +1,39 @@
+micronaut:
+  application:
+    name: microstar
+  server:
+    port: 3000
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+  metrics:
+    enabled: true
+datasources:
+  default:
+    url: ${DB_URL}
+    driver-class-name: org.postgresql.Driver
+    db-type: postgres
+    dialect: POSTGRES
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+otel:
+  traces:
+    exporter: otlp
+  metrics:
+    exporter: otlp
+  logs:
+    exporter: otlp
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+logging:
+  level:
+    io.micronaut.context.condition: TRACE
