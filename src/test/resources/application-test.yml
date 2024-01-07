@@ -1,3 +1,8 @@
+datasources:
+  default:
+    url: jdbc:tc:postgresql:16-alpine:///postgres
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+
 jpa:
   default:
     properties:

@@ -3,4 +3,4 @@ defaultPackage: microstar
 testFramework: junit
 sourceLanguage: java
 buildTool: maven
-features: [app-name, data, data-jpa, http-client-test, java, java-application, jdbc-hikari, junit, logback, lombok, maven, maven-enforcer-plugin, micronaut-aot, micronaut-http-validation, netty-server, openapi, postgres, readme, serialization-jackson, shade, swagger-ui, test-resources, tracing-opentelemetry-exporter-logging, tracing-opentelemetry-exporter-otlp, validation, yaml, yaml-build]
+features: [app-name, data, data-jpa, http-client-test, java, java-application, jdbc-hikari, junit, logback, lombok, maven, maven-enforcer-plugin, micronaut-aot, micronaut-http-validation, netty-server, openapi, postgres, readme, serialization-jackson, shade, swagger-ui, testcontainers, tracing-opentelemetry-exporter-logging, tracing-opentelemetry-exporter-otlp, validation, yaml, yaml-build]
