@@ -56,9 +56,9 @@ public class PersonControllerTest {
         Assertions.assertNotNull(person);
         Assertions.assertEquals(createdPersonId, person.id(), "ID should remain the same");
 
-//        Assertions.assertEquals("UpdatedJohn", person.firstName(), "First name should be updated");
-//        Assertions.assertEquals("UpdatedSmith", person.lastName(), "Last name should be updated");
-//        Assertions.assertEquals("updatedjsmith@codaholic.com", person.email(), "Email should be updated");
+//        Assertions.assertEquals("John", person.firstName(), "First name should be updated");
+//        Assertions.assertEquals("Smith", person.lastName(), "Last name should be updated");
+//        Assertions.assertEquals("jsmith@codaholic.com", person.email(), "Email should be updated");
         Assertions.assertEquals(34, person.age(), "Age should be updated");
     }
 
@@ -67,5 +67,12 @@ public class PersonControllerTest {
     public void testDelete() {
         var person = client.delete(createdPersonId);
         Assertions.assertEquals(HttpStatus.NO_CONTENT, person.getStatus());
+    }
+
+    @Test
+    @Order(6)
+    public void testForEmptyId() {
+        var foundPerson = client.findById(createdPersonId);
+        Assertions.assertNull(foundPerson);
     }
 }
